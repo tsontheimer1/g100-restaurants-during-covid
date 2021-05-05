@@ -62,12 +62,9 @@ is_res = allloans['NAICSCode'].isin(["722110", "722211", "722212", "722213", "72
 
 resto_loans = allloans[is_res]    
 
-#census only has 5 zips on their maps
-#last four digits are not attached to usable geography
-#d['trim_zip'] = d['zip'].str[:5]
-# new column and .str tells pandas when it's looking at the column you're about to call a str method
-#left most five characters in the string
-#check length of trim zip
-#do what we did in class
-#ditch all the zips that are not 5 or 9 and then do it
-           
+resto_loans.to_pickle('resto_loans.zip')
+
+index=resto_loans.index
+number_rows=len(index)
+print("After combining all the FOIA PPP data and sorting it based upon NAICS codes, the number of PPP loans for restaurants is:")
+print(number_rows)
