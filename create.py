@@ -11,9 +11,10 @@ Created on Tue May  4 20:54:40 2021
 #further use in the analysis.
 
 import pandas as pd
-import ast
 
-#Create a data frame with each CSV file 
+#Create a data frame with each CSV file. This data is from May 2, 2021, 9:30 PM (UTC-04:00)
+#It can be downloaded at https://data.sba.gov/dataset/ppp-foia 
+#All 12 avaiable CSV files will be used
 
 loan1=pd.read_csv('public_up_to_150k_1.csv', dtype=str)
 
@@ -44,8 +45,9 @@ loan12=pd.read_csv('public_150k_plus.csv', dtype=str)
 allloans=loan1.append([loan2, loan3, loan4, loan4, loan5, loan6, loan7, loan8, loan9, loan10, loan11, loan12])
 
 #Now from all the all the loans I will find the businesses that correspond to restaurant or reaturant adjacent businesses
+#NAICS codes are sourced from here https://www.census.gov/eos/www/naics/reference_files_tools/1997/sec72.htm#:~:text=722110%20Full%2DService%20Restaurants,service)%20and%20pay%20after%20eating.
 
-resto_naics={"722110": "Full-Service Restaurants",
+resto_naics_dict={"722110": "Full-Service Restaurants",
              "722211": "Limited-Service Resturants",
              "722212": "Cafeterias",
              "722213": "Snack and Nonalcoholic Beverage Bars",
@@ -54,6 +56,18 @@ resto_naics={"722110": "Full-Service Restaurants",
              "722330":" Mobile Food Services",
              "722410": "Drinking Places (Alcoholic Beverages)"}
 
-#restoloans=allloans['NAICSCode'].apply(ast.literal_eval).str.get('resto_naics')
+resto_naics_list=["722110", "722211", "722212","722213","722310","722320", "722330", "722410"]
 
+is_res = allloans['NAICSCode'].isin(["722110", "722211", "722212", "722213", "722310", "722320", "722330", "722410"])   
 
+resto_loans = allloans[is_res]    
+
+#census only has 5 zips on their maps
+#last four digits are not attached to usable geography
+#d['trim_zip'] = d['zip'].str[:5]
+# new column and .str tells pandas when it's looking at the column you're about to call a str method
+#left most five characters in the string
+#check length of trim zip
+#do what we did in class
+#ditch all the zips that are not 5 or 9 and then do it
+           
