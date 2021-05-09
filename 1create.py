@@ -63,8 +63,15 @@ is_res = allloans['NAICSCode'].isin(["722110", "722211", "722212", "722213", "72
 resto_loans = allloans[is_res]    
 
 resto_loans.to_pickle('resto_loans.zip')
+resto_loans.to_csv('resto_loans_int.csv')
 
 index=resto_loans.index
 number_rows=len(index)
 print("After combining all the FOIA PPP data and sorting it based upon NAICS codes, the number of PPP loans for restaurants is:")
 print(number_rows)
+
+
+print(resto_loans['JobsReported'].describe())
+
+
+
