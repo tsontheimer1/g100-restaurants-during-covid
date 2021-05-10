@@ -22,21 +22,20 @@ Inputs include:
 3) 2020 TIGER/Line® Shapefiles for ZIP Code Tabulation Areas. It is located here: https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2020&layergroup=ZIP+Code+Tabulation+Areas
 
 Outputs include: 
-1) a graph which demonstrates the current approval amount of PPP loans for a restaurants;
-2) a hex diagram that compares jobs reported and loan approval amount;
-3) a detailed graphs about number of jobs reported by restaurants recieving loans;
-4) a boxplot of money recieved by NAICS code;
-5) a box plot of loan size and across gender of the loan recipients;
-6) a graph across race of the loan recipients;
-7) a bar graph for the top 10 and bottom 10 states;
-8) a bar graph for the top 10 cities;
-9) a bar graph of the top 20 states per capita for loan amount;
-10) a bar graph of the top 10 cities per capita for loan amount;
-11) a heatmap graph for NAICS code industry classification across the top 10 states for the Current Loan Amounts;
-12) a heatmap graph for NAICS code industry classification across the top 10 cities for the Current Loan Amounts;
-13) a map of loan amounts per state;
-14) a map of loan amounts across New York State at the county level;
-15) and a map of loan amounts across the zips.
+1) a graph which demonstrates the current approval amount of PPP loans for a restaurants ("CurrentApprovalAmount_trimmed.png");
+2) a hex diagram that compares jobs reported and loan approval amount ("resto_hex.png");
+3) a detailed graphs about number of jobs reported by restaurants recieving loans ("jr_under100.png", "jr_under10.png", "jr_over100.png");
+4) a boxplot of money recieved by NAICS code ("loans_by_est.png");
+5) a box plot of loan size and across gender of the loan recipients ("Resto_loans_gender.png");
+6) a graph across race of the loan recipients ("Resto_loans_race.png");
+7) a bar graph for the top 10 and bottom 10 state ("top10states_loan.png" and "bottom10states_loan.png");
+8) a bar graph for the top 10 cities("cityamt".png);
+9) a bar graph of the top 20 states per capita for loan amount ("loanspercap.png");
+10) a heatmap graph for NAICS code industry classification across the top 10 states for the Current Loan Amounts ("heatmap_state.png");
+11) a heatmap graph for NAICS code industry classification across the top 10 cities for the Current Loan Amounts ("heatmap_cities.png");
+12) a map of loan amounts per state ("loanamtbystate.png");
+13) a map of loan amounts across New York State at the county level ("small zip map.png");
+14) and a map of loan amounts across the zips ("bigzipmap.png").
 
 In the map of loan amounts per state darker greeners recieved more money.
 
