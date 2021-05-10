@@ -1,20 +1,20 @@
 # g100-restaurants-during-covid
-This analysis studies the impact of COVID on restaurants. Using Small Businesses Adminsitration data about Payroll Protection Program Freedom of Information Act data, I visualized and graphed it for restaurants -- one of the industries hardest hit by COVID--across multiple dimensions.
+This analysis studies the impact of COVID on restaurants. Using Small Businesses Adminsitration data about Payroll Protection Program Freedom of Information Act data, I visualized and graphed it for restaurants -- one of the industries hardest hit by the COVID-19 pandemic--across multiple dimensions.
 
-The Paycheck Protection Program (PPP) is a forgivable loanw which is designed to support sole proprietors, independent contractors and self-employed, private non-profits and 501(c)(19) veterans organizations. It functions as an incentive to maintain workers on the payroll during the pandemic. The progrm is ongoing until May 31, 2021.
+The Paycheck Protection Program (PPP) is a forgivable loan which is designed to support sole proprietors, independent contractors and self-employed, private non-profits and 501(c)(19) veterans organizations. It functions as an incentive to maintain workers on the payroll during the pandemic. The program is ongoing until May 31, 2021.
 
 The scripts should be run in order of 1create.py , 2polish.py , 3analyze_resto_loans.py , 4resto_viz_corr.py, 5loanspercapita.py, and 6heatmap.
 
-The NAICS Codes are how the data was filtered to represent the restaurants. Their classifications can be found below. Greater detail about what makes up each sector can be found here: https://www.census.gov/naics/?input=72&year=2017&details=722. 
+I used the North American Industry Classification System (NAICS) Codes to filter the data for restaurants. Their classifications can be found below. Greater detail about what makes up each sector can be found here: https://www.census.gov/naics/?input=72&year=2017&details=722. 
              
-             "722110": "Full-Service Restaurants",
-             "722211": "Limited-Service Restaurants",
-             "722212": "Cafeterias",
-             "722213": "Non-alcoholic Bars",
-             "722310": "Food Service Contractors",
-             "722320": "Caterers",
-             "722330":" Mobile Food Services",
-             "722410": "Bars"
+             722110: Full-Service Restaurants
+             722211: Limited-Service Restaurants
+             722212: Cafeterias
+             722213: Non-alcoholic Bars
+             722310: Food Service Contractors
+             722320: Caterers
+             722330: Mobile Food Services
+             722410: Bars
 
 Inputs include: 
 1) 12 CSV files from the Small Businesses Administration. Details for accessing them can be found below.
@@ -39,6 +39,7 @@ Outputs include:
 15) and a map of loan amounts across the zips.
 
 In the map of loan amounts per state darker greeners recieved more money.
+
 In the maps of the loan amounts across New York State at the county level and across all the zips the scale is dark green most to dark red least amount of PPP restaurant funding.
 
 #The SBA data for this analysis is from May 2, 2021, 9:30 PM (UTC-04:00)
@@ -49,7 +50,7 @@ As a researcher, my key takeaways and remaining questions are:
 1) there is a huge range of loan size—who received the big money?
 2) At first glance demographic data seems equitable but further analysis is necessary to confirm this. It could be overlaid with detailed ownership data.
 3) NAICS Codes may not be the best classification system to understand the complexity of food. Cafeterias are an example; it is my belief that buffets and COVID-19 intense impact on them likely drove this number up.
-4) I found per capita funding to be surprising. Chicago was a big recipient.
+4) I found per capita restaurant PPP funding to be surprising. Chicago was a big recipient.
 5) Remaining questions for me include: How will rural restaurants fare? Did this protect jobs on payroll? Are there richer ways to analyze restaurants? How did geographically specific COVID restrictions impact the performance, profitability, and outcomes of these restaurants? How did local vs. non-local businesses fare?
 
 Thanks for checking out my project! Eat local & cheers!
