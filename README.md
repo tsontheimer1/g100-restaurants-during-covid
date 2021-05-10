@@ -38,6 +38,9 @@ Outputs include:
 14) a map of loan amounts across New York State at the county level;
 15) and a map of loan amounts across the zips.
 
+In the map of loan amounts per state darker greeners recieved more money.
+In the maps of the loan amounts across New York State at the county level and across all the zips the scale is dark green most to dark red least amount of PPP restaurant funding.
+
 #The SBA data for this analysis is from May 2, 2021, 9:30 PM (UTC-04:00)
 #It can be downloaded at https://data.sba.gov/dataset/ppp-foia.
 #All 12 avaiable CSV files will be used.
