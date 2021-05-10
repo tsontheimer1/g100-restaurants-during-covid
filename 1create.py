@@ -16,6 +16,8 @@ import pandas as pd
 #It can be downloaded at https://data.sba.gov/dataset/ppp-foia 
 #All 12 avaiable CSV files will be used
 
+#Here I am loading each csv to a dataframe.
+
 loan1=pd.read_csv('public_up_to_150k_1.csv', dtype=str)
 
 loan2=pd.read_csv('public_up_to_150k_2.csv', dtype=str)
@@ -40,7 +42,7 @@ loan11=pd.read_csv('public_up_to_150k_11.csv', dtype=str)
 
 loan12=pd.read_csv('public_150k_plus.csv', dtype=str)
 
-#Compile into one dataframe
+#Now I will compile into one dataframe,
 
 allloans=loan1.append([loan2, loan3, loan4, loan4, loan5, loan6, loan7, loan8, loan9, loan10, loan11, loan12])
 
@@ -62,6 +64,7 @@ is_res = allloans['NAICSCode'].isin(["722110", "722211", "722212", "722213", "72
 
 resto_loans = allloans[is_res]    
 
+#It is really key to pickle these files so we do not have to re-run all of the CSVs to dataframes each time.
 resto_loans.to_pickle('resto_loans.zip')
 resto_loans.to_csv('resto_loans_int.csv')
 
@@ -70,7 +73,7 @@ number_rows=len(index)
 print("After combining all the FOIA PPP data and sorting it based upon NAICS codes, the number of PPP loans for restaurants is:")
 print(number_rows)
 
-
+#Here I am just trying to take a peek at some of the features of our data.
 print(resto_loans['JobsReported'].describe())
 
 

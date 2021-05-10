@@ -53,6 +53,8 @@ print (zip5.value_counts(dropna=False))
 
 resto_loans['zip']=zip5
 
+#Here I am dropping some unnecessary columns.
+
 resto_loans_polished=resto_loans.drop(['SBAOfficeCode', 'ProcessingMethod', 'LoanStatusDate', 'SBAGuarantyPercentage', 'FranchiseName',	
  'ServicingLenderLocationID', 'ServicingLenderName', 'ServicingLenderAddress',	'ServicingLenderCity', 'ServicingLenderState',
  'ServicingLenderZip', 'UTILITIES_PROCEED',	'PAYROLL_PROCEED', 'MORTGAGE_INTEREST_PROCEED',	 'RENT_PROCEED',

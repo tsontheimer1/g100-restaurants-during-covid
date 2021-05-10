@@ -72,7 +72,7 @@ print(resto_loans_cleaned.info)
 state_total=resto_loans_cleaned.groupby("ProjectState")['CurrentApprovalAmount'].sum()
 print (state_total)
 
-state_total=pd.DataFrame(state_total)
+state_total=state_total.to_frame()
 
 print('Here is the total PPP funding for restaurants by state:')
 
@@ -94,6 +94,7 @@ catvars=['BorrowerCity', 'BorrowerState', 'ProjectCity', 'ProjectState', 'Race',
 
 #%%
 resto_loans_cleaned.to_csv('resto_loans_readytograph.csv')
-resto_loans_cleaned.to_pickle('resto_loans_clean.pkl')
-state_total.to_pickle('state_total.pkl')
+resto_loans_cleaned.to_pickle('resto_loans_readytograph.zip')
+resto_loans_cleaned.to_pickle('state_totals_readytograph.zip')
+state_total.to_pickle('state_total.zip')
 

@@ -157,7 +157,7 @@ bottom_10k=resto_loans.sort_values('CurrentApprovalAmount').iloc[:10000]
 
 #%%
  
-#This is a graph across time and across gender of the loan recipients.
+#This is a graph across loan size and across gender of the loan recipients.
    
 fig, ax1 = plt.subplots(dpi=300)
 sns.boxenplot(data= trim_99, y="CurrentApprovalAmount", x= "Gender", orient="v", ax=ax1)

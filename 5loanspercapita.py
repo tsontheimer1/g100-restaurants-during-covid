@@ -6,6 +6,8 @@ Created on Sun May  9 18:02:41 2021
 @author: Tessa
 """
 
+#In this script I will analyze loans per capita. I will do this by using an api call to gather state level population data.
+#Additional analysis could be done to find the per capita funding on the city level.
 
 import pandas as pd
 import seaborn as sns
@@ -17,7 +19,7 @@ sns.set_style("whitegrid")
 
 
 resto_loans_percap = pd.read_pickle('resto_loans_readytograph.zip')
-state_total = pd.read_pickle('state_totals_readytograph.zip')
+state_total_pc = pd.read_pickle('state_total.zip')
 #%%
 
 #In this block of code I will use an API to get the population by state. This will be used to find the PPP restaurant loans by state, per capita.
@@ -53,6 +55,7 @@ pop['ProjectState'] = pop[ is_conus ]
 
 print( '\nFiltered length:', len(pop) )
 
+#I ran into key issues so I used this dictionary to do some renaming.
 pop_corr=pop.replace({'Alabama':'AL',
              'Arizona': 'AZ',
              'Arkansas': 'AR',
@@ -111,17 +114,18 @@ pop_corr.to_csv('pop.csv', index=False)
 #%%
 
 #Here is the state totals merged with the population we just did.
-state_total=state_total.merge(pop_corr,
+state_total_pc=state_total_pc.merge(pop_corr,
                               on='ProjectState', 
                               how='left')
 
 #%% Now I will find the PPP loans amounts by state.
 
 
-state_total['B01001_001E']=state_total['B01001_001E'].astype(float)
-state_total['loan_percap']=state_total['CurrentApprovalAmount']/state_total['B01001_001E']
-state_total_g=state_total.sort_values('loan_percap').iloc[-20:]
+state_total_pc['B01001_001E']=state_total_pc['B01001_001E'].astype(float)
+state_total_pc['loan_percap']=state_total_pc['CurrentApprovalAmount']/state_total_pc['B01001_001E']
+state_total_g=state_total_pc.sort_values('loan_percap').iloc[-20:]
 
+#This is a bar plot to visualize the loans per capita across the top 20 states. DC isn't a state yet (as of May 2021 but maybe soon?) but sure got some funding.
 
 fig, ax1 = plt.subplots()
 sns.barplot(x='ProjectState', y='loan_percap', data=state_total_g, ax=ax1)
@@ -132,13 +136,14 @@ fig.savefig('loanspercap.png', dpi=300)
 
 #%%
 
+#Now I will do a bit of additonal graphing of the top 10 and bottom 10 states.
 
-states_=state_total['CurrentApprovalAmount'].sort_values(axis='index')
+states_select=state_total_pc['CurrentApprovalAmount'].sort_values(axis='index')
 
-top_10_states=state_total.sort_values('CurrentApprovalAmount').iloc[-10:]
-bottom_10_states=state_total.sort_values('CurrentApprovalAmount').iloc[:10]
+top_10_states=state_total_pc.sort_values('CurrentApprovalAmount').iloc[-10:]
+bottom_10_states=state_total_pc.sort_values('CurrentApprovalAmount').iloc[:10]
 
-#Graph of top 10 states
+#Now I create a graph of top 10 states...
 
 
 fig, ax1 = plt.subplots()
@@ -148,7 +153,7 @@ plt.xlabel('State')
 plt.title('Top 10 States Recieving Restaurant PPP Loans' )
 fig.savefig('top10states_loan.png', dpi=300)
 
-#Graph of bottom 10 states
+#and a graph of bottom 10 states.
 
 fig, ax1 = plt.subplots()
 sns.barplot(x='ProjectState', y='CurrentApprovalAmount', data=bottom_10_states, ax=ax1)
@@ -160,6 +165,7 @@ fig.savefig('bottom10states_loan.png', dpi=300)
 
 #%%
 
+#This is a graph of the top cities that recieving PPP funding for their restaurants. Note: this focused on project city, not borrower city. 
 city_total=resto_loans_percap.groupby("ProjectCity")['CurrentApprovalAmount'].sum()
 city_total=city_total.to_frame()
 
@@ -173,14 +179,10 @@ fig.tight_layout()
 plt.title('Top 10 Cities Recieving PPP Restaurant Loans')
 fig.savefig('loans_per_city.png', dpi=300)
 
-#Ways to extend the analysis
-#Allocation across cities and industries known as a tree or mosaic plot
-#Which industries in which cities got the most
-#Heatmap
-#Draw a tree plot
 
 pop.to_pickle('pop.zip')
-state_total.to_pickle('state_totals.zip')
+state_total_pc.to_pickle('state_totals_pc.zip')
 resto_loans_percap.to_pickle('resto_loans_percap.zip')
+city_total.to_pickle('city_total.zip')
 
 
