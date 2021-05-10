@@ -47,6 +47,6 @@ As a researcher, my key takeaways and remaining questions are:
 2) At first glance demographic data seems equitable but further analysis is necessary to confirm this. It could be overlaid with detailed ownership data.
 3) NAICS Codes may not be the best classification system to understand the complexity of food. Cafeterias are an example; it is my belief that buffets and COVID-19 intense impact on them likely drove this number up.
 4) I found per capita funding to be surprising. Chicago was a big recipient.
-5) Remaining questions for me include: How will rural restaurants fare? Did this protect jobs on payroll? Are there richer ways to analyze restaurants? How did geographically specific COVID restrictions impact the performance, profitability, and outcomes of these restaurants. 
+5) Remaining questions for me include: How will rural restaurants fare? Did this protect jobs on payroll? Are there richer ways to analyze restaurants? How did geographically specific COVID restrictions impact the performance, profitability, and outcomes of these restaurants? How did local vs. non-local businesses fare?
 
-Thanks for checking out my project! Cheers!
+Thanks for checking out my project! Eat local & cheers!
