@@ -32,12 +32,21 @@ Outputs include:
 8) a bar graph for the top 10 cities;
 9) a bar graph of the top 20 states per capita for loan amount;
 10) a bar graph of the top 10 cities per capita for loan amount;
-11) a heatmap graph for NAICS code industry classification across the top 10 states for the Current Loan Amounts:
-12) a map of loan amounts per state:
-13) and a map of loan amounts across the zips. 
+11) a heatmap graph for NAICS code industry classification across the top 10 states for the Current Loan Amounts;
+12) a heatmap graph for NAICS code industry classification across the top 10 cities for the Current Loan Amounts;
+13) a map of loan amounts per state;
+14) a map of loan amounts across New York State at the county level;
+15) and a map of loan amounts across the zips.
 
 #The SBA data for this analysis is from May 2, 2021, 9:30 PM (UTC-04:00)
 #It can be downloaded at https://data.sba.gov/dataset/ppp-foia.
 #All 12 avaiable CSV files will be used.
 
+As a researcher, my key takeaways and remaining questions are:
+1) there is a huge range of loan size—who received the big money?
+2) At first glance demographic data seems equitable but further analysis is necessary to confirm this. It could be overlaid with detailed ownership data.
+3) NAICS Codes may not be the best classification system to understand the complexity of food. Cafeterias are an example; it is my belief that buffets and COVID-19 intense impact on them likely drove this number up.
+4) I found per capita funding to be surprising. Chicago was a big recipient.
+5) Remaining questions for me include: How will rural restaurants fare? Did this protect jobs on payroll? Are there richer ways to analyze restaurants? How did geographically specific COVID restrictions impact the performance, profitability, and outcomes of these restaurants. 
 
+Thanks for checking out my project! Cheers!
