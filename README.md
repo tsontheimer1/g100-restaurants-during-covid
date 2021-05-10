@@ -1,5 +1,5 @@
 # g100-restaurants-during-covid
-This analysis studies the impact of COVID on restaurants. Using Small Businesses Adminsitration data about Payroll Protection Program Freedom of Information Act data, I visualized and graphed it for restaurants -- one of the industries hardest hit by the COVID-19 pandemic--across multiple dimensions.
+This analysis studies the impact of COVID-19 and associated federal government incentive programs on restaurants. Using Small Businesses Adminsitration data about Payroll Protection Program Freedom of Information Act data, I visualized and graphed it for restaurants -- one of the industries hardest hit by the COVID-19 pandemic--across multiple dimensions.
 
 The Paycheck Protection Program (PPP) is a forgivable loan which is designed to support sole proprietors, independent contractors and self-employed, private non-profits and 501(c)(19) veterans organizations. It functions as an incentive to maintain workers on the payroll during the pandemic. The program is ongoing until May 31, 2021.
 
