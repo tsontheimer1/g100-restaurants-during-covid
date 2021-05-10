@@ -171,14 +171,14 @@ city_total=city_total.to_frame()
 
 city_total_top10=city_total.sort_values('CurrentApprovalAmount').iloc[-10:]
 
-sns.catplot(y='ProjectCity', x='CurrentApprovalAmount', data=city_total_top10.reset_index(), ax=ax1, kind='bar', orient='h')
+fig=sns.catplot(y='ProjectCity', x='CurrentApprovalAmount', data=city_total_top10.reset_index(), ax=ax1, kind='bar', orient='h')
 plt.ylabel('Cities')
 plt.xlabel('Dollars')
 fig.tight_layout()
 plt.title('Top 10 Cities Recieving PPP Restaurant Loans')
-fig.savefig('loans_per_city.png', dpi=300)
+fig.savefig('cityamts.png', dpi=300)
 
-
+#%%
 pop.to_pickle('pop.zip')
 state_total_pc.to_pickle('state_totals_pc.zip')
 resto_loans_percap.to_pickle('resto_loans_percap.zip')
