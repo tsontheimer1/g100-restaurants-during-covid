@@ -27,7 +27,8 @@ sns.set_style("whitegrid")
 
 resto_loans_hm = pd.read_pickle('resto_loans_percap.zip')
 state_pop = pd.read_pickle('pop.zip')
-state_totals=pd.read_pickle('state_totals.zip')
+state_totals=pd.read_pickle('state_total.zip')
+
 
 
 full_WI=resto_loans_hm.query('ProjectState == "WI"') #1
@@ -148,13 +149,10 @@ heatmap_city.fillna(value=0, inplace=True)
 
 
 fig, ax1 = plt.subplots(dpi=300)
-
 fig.suptitle("Funding by NAICS Code in Top 10 Cities")
 sns.heatmap(heatmap_city, ax=ax1)
-
 plt.xlabel("Project City")
 plt.ylabel("Industry by NAICS Code")
-
 fig.tight_layout()
 
 fig.savefig("heatmap_cities.png")

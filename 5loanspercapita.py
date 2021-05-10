@@ -171,7 +171,6 @@ city_total=city_total.to_frame()
 
 city_total_top10=city_total.sort_values('CurrentApprovalAmount').iloc[-10:]
 
-fig, ax1 = plt.subplots()
 sns.catplot(y='ProjectCity', x='CurrentApprovalAmount', data=city_total_top10.reset_index(), ax=ax1, kind='bar', orient='h')
 plt.ylabel('Cities')
 plt.xlabel('Dollars')

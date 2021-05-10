@@ -18,7 +18,7 @@ sns.set_style("whitegrid")
 #Here I am importing and doing a log on current approval amounts for the PPP loans for restaurants.
         
 resto_loans = pd.read_pickle('resto_loans_readytograph.zip')
-state_totals = pd.read_pickle('state_totals_readytograph.zip')
+state_totals = pd.read_pickle('state_total.zip')
 
 
 print(resto_loans['CurrentApprovalAmount'].describe())
@@ -48,7 +48,7 @@ print (caa99)
 print("Here is the jobs reported at the 99th and 75th percentile, respectively. They will be trimmed below in two variables called jrt50 and jrt99:")
 print(jrt99)
 print(jrt75)
-#trimm_99 removes the top 1% of the loans and the bottom 50% of jobs reported.
+#trimm_99 removes the top 1% of the loans through the Current Approval Amount.
 
 #trim_99_2 removes the top 1% of the loans and the bottom 99% of jobs reported. 
 trim_99 = resto_loans.query(f"CurrentApprovalAmount <= {caa99} " )
@@ -77,14 +77,7 @@ fig = sns.jointplot(data=trim_99_2,
 plt.ylabel('Loan in Dollars (99th percentile of loans removed)')
 plt.xlabel('Total Jobs Reported (99th percentile of jobs reported shown)')
 fig.savefig('resto_hex.png')
-#%%
-#Now I will create a graph of PPP loans for restaurant across the months.
-
-#sns.barplot(x='year', y='CurrentApprovalAmount', data=trim_99)
-#plt.ylabel('Restaurant PPP Loan Amount in Dollars (99th percentile removed)')
-#plt.xlabel('Month Loan Application was Recieved')
-#plt.title('Loan Amounts by Year')
-#fig.savefig('Loan_by_Yr.png', dpi=300)
+#note this doesn't have a title because it doesn't appear properly.
 
 #%%
 #To set the title of axes object A to "words" use A.set_title("words"). To set the X label to "words" use A.set_xlabel("words"). 
@@ -119,7 +112,7 @@ fig.savefig('jr_under100.png', dpi=300)
 
 fig, ax = plt.subplots( dpi=300)
 
-
+#I am using this dictionary to do some renaming. 
 trim_99_n=trim_99.replace({"722110": "Full-Service Restaurants",
              "722211": "Limited-Service Rest.",
              "722212": "Cafeterias",
@@ -142,6 +135,8 @@ fig.savefig('loan_by_est.png', dpi=300)
 
 
 #%%
+
+#Here is printing some data which is helpful for thinking about how we will understand and visualize our results.
 
 print("Here are some statistics about the data:")
 print("\nData about PPP loan amount for a restaurants:")
@@ -183,10 +178,3 @@ plt.xticks(rotation=25)
 fig.tight_layout()
 fig.savefig("Resto_loans_race.png", dpi=300)
 
-#%%
-#for var in ["zip", "ProjectState", "ProjectCity"]:
-    #subset = resto_loans.sort_values('CurrentApprovalAmount').iloc[-10:]
-    #fig=sns.catplot(y=var, data=subset, kind='count')
-    #fig.savefig(f"resto_loans_{var}.png", dpi=300)
-
-#%%

@@ -91,10 +91,9 @@ catvars=['BorrowerCity', 'BorrowerState', 'ProjectCity', 'ProjectState', 'Race',
     #print (resto_loans_cleaned[var].value_counts())
     #fig=sns.catplot(y=var, data=resto_loans_cleaned, kind='count')
 
-
 #%%
 resto_loans_cleaned.to_csv('resto_loans_readytograph.csv')
 resto_loans_cleaned.to_pickle('resto_loans_readytograph.zip')
-resto_loans_cleaned.to_pickle('state_totals_readytograph.zip')
+#resto_loans_cleaned.to_pickle('state_totals_readytograph.zip')
 state_total.to_pickle('state_total.zip')
 

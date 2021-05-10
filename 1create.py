@@ -75,6 +75,3 @@ print(number_rows)
 
 #Here I am just trying to take a peek at some of the features of our data.
 print(resto_loans['JobsReported'].describe())
-
-
-

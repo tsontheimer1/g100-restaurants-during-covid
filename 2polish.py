@@ -16,7 +16,6 @@ print(resto_loans['JobsReported'].describe())
 
 print(resto_loans['JobsReported'].max())
 
-
 #%%
 
 zip_all = resto_loans['ProjectZip']
