@@ -1,12 +1,14 @@
 # g100-restaurants-during-covid
 This analysis studies the impact of COVID on restaurants. Using Small Businesses Adminsitration data about Payroll Protection Program Freedom of Information Act data, I visualized and graphed it for restaurants -- one of the industries hardest hit by COVID--across multiple dimensions.
 
-The scripts should be run in order of 1create, 2polish, 3analyze_resto_loans, 4resto_viz_corr, and 5loanspercapita.
+The Paycheck Protection Program (PPP) is a forgivable loanw which is designed to support sole proprietors, independent contractors and self-employed, private non-profits and 501(c)(19) veterans organizations. It functions as an incentive to maintain workers on the payroll during the pandemic. The progrm is ongoing until May 31, 2021.
 
-The NAICS Codes are how the data was filtered to represent the restaurants. Their classifications can be found below.
+The scripts should be run in order of 1create.py , 2polish.py , 3analyze_resto_loans.py , 4resto_viz_corr.py, 5loanspercapita.py, and 6heatmap.
+
+The NAICS Codes are how the data was filtered to represent the restaurants. Their classifications can be found below. Greater detail about what makes up each sector can be found here: https://www.census.gov/naics/?input=72&year=2017&details=722. 
              
              "722110": "Full-Service Restaurants",
-             "722211": "Limited-Service Rest.",
+             "722211": "Limited-Service Restaurants",
              "722212": "Cafeterias",
              "722213": "Non-alcoholic Bars",
              "722310": "Food Service Contractors",
